@@ -1,6 +1,15 @@
 package models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class AgentskiCentar {
+	
+	@Id
+    @GeneratedValue
+    private Integer id;
 	
 	private String alias;
 	private String address;
@@ -12,6 +21,14 @@ public class AgentskiCentar {
 		//super();
 		this.alias = alias;
 		this.address = address;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getAlias() {

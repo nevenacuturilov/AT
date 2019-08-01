@@ -2,6 +2,11 @@ package models;
 
 import java.util.HashMap;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class ACLPoruka {
 	
 	public enum Performative {
@@ -30,6 +35,10 @@ public class ACLPoruka {
         UNKNOWN,
     }
 	
+	@Id
+    @GeneratedValue
+    private Integer id;
+	
 	private Performative performative;
 	private AID sender;
 	private AID[] receivers;
@@ -54,7 +63,17 @@ public class ACLPoruka {
 		this.sender = sender;
 		this.receivers = receivers;
 	}
+	
+	//full konstruktor??
 
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	
 	public Performative getPerformative() {
 		return performative;
 	}
@@ -99,7 +118,7 @@ public class ACLPoruka {
 		return contentObj;
 	}
 
-	public void setContentObj(Object contentObj) {
+	public void setContentObjt(Object contentObj) {
 		this.contentObj = contentObj;
 	}
 
